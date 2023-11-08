@@ -28,6 +28,20 @@ def select_features(features):
         return choice-1
     else:
         return None
+def scheme_feature_declaration():
+    scheme_choice = select_classification_scheme()
+    features = []
+    if scheme_choice == 1:
+        scheme = "SwM tasks"
+        features = ["Corrective Tasks", "Adaptive Tasks", "Perfective Tasks"]
+    elif scheme_choice == 2:
+        scheme = "NFR Labelling"
+        features = ["Maintainability", "Usability", "Functionality", "Reliability", "Efficiency",
+                    "Portability"]
+    elif scheme_choice == 3:
+        scheme = "SoftEvol tasks"
+        features = ["Forward Engineering", "Re-Engineering", "Corrective Engineering", "Management"]
+    return scheme_choice, features
 def menu():
     mydict = main.data_preprocessing()
     committers = list(mydict.keys())
@@ -42,19 +56,9 @@ def menu():
         if option == 1:
             scheme_choice = select_classification_scheme()
             committer = select_committer(committers)
-            scheme = ''
-            features = []
             if committer:
-                if scheme_choice == 1:
-                    scheme = "SwM tasks"
-                    features = ["Corrective Tasks", "Adaptive Tasks", "Perfective Tasks"]
-                elif scheme_choice == 2:
-                    scheme = "NFR Labelling"
-                    features = ["Maintainability", "Usability", "Functionality", "Reliability", "Efficiency",
-                                "Portability"]
-                elif scheme_choice == 3:
-                    scheme = "SoftEvol tasks"
-                    features = ["Forward Engineering", "Re-Engineering", "Corrective Engineering", "Management"]
+                scheme = scheme_feature_declaration()[0]
+                features = scheme_feature_declaration()[1]
                 if committer in mydict and scheme in mydict[committer]:
                     counts = mydict[committer][scheme]
                     print(f"Commits by {scheme} for {committer}: {counts}")
@@ -71,17 +75,8 @@ def menu():
 
         elif option == 2:
             scheme_choice = select_classification_scheme()
-            scheme = ''
-            features = []
-            if scheme_choice == 1:
-                scheme = "SwM tasks"
-                features = ["Corrective Tasks", "Adaptive Tasks", "Perfective Tasks"]
-            elif scheme_choice == 2:
-                scheme = "NFR Labelling"
-                features = ["Maintainability", "Usability", "Functionality", "Reliability", "Efficiency", "Portability"]
-            elif scheme_choice == 3:
-                scheme = "SoftEvol tasks"
-                features = ["Forward Engineering", "Re-Engineering", "Corrective Engineering", "Management"]
+            scheme = scheme_feature_declaration()[0]
+            features = scheme_feature_declaration()[1]
 
             feature_choice = select_features(features)
             feature_list = []
@@ -96,17 +91,9 @@ def menu():
             print()
         elif option == 3:
             scheme_choice = select_classification_scheme()
-            scheme = ''
-            features = []
-            if scheme_choice == 1:
-                scheme = "SwM tasks"
-                features = ["Corrective Tasks", "Adaptive Tasks", "Perfective Tasks"]
-            elif scheme_choice == 2:
-                scheme = "NFR Labelling"
-                features = ["Maintainability", "Usability", "Functionality", "Reliability", "Efficiency", "Portability"]
-            elif scheme_choice == 3:
-                scheme = "SoftEvol tasks"
-                features = ["Forward Engineering", "Re-Engineering", "Corrective Engineering", "Management"]
+            scheme = scheme_feature_declaration()[0]
+            features = scheme_feature_declaration()[1]
+
             feature_choice = select_features(features)
             max_names = []
             max_commit = -1
