@@ -41,7 +41,7 @@ def scheme_feature_declaration():
     elif scheme_choice == 3:
         scheme = "SoftEvol tasks"
         features = ["Forward Engineering", "Re-Engineering", "Corrective Engineering", "Management"]
-    return scheme_choice, features
+    return scheme, features
 def menu():
     mydict = main.data_preprocessing()
     committers = list(mydict.keys())
@@ -51,14 +51,16 @@ def menu():
         print("2. Select Classification Scheme and Feature")
         print("3. Print the developer with the maximum number of commits")
         print("4. Exit")
-        option = int(input("Enter your choice: "))
+        option = int(input("Enter your choice: \n"))
 
         if option == 1:
-            scheme_choice = select_classification_scheme()
             committer = select_committer(committers)
+            scheme = ''
+            features = []
             if committer:
-                scheme = scheme_feature_declaration()[0]
-                features = scheme_feature_declaration()[1]
+                temp = scheme_feature_declaration()
+                scheme = temp[0]
+                features = temp[1]
                 if committer in mydict and scheme in mydict[committer]:
                     counts = mydict[committer][scheme]
                     print(f"Commits by {scheme} for {committer}: {counts}")
@@ -66,7 +68,7 @@ def menu():
                     print(f"No data found for {committer} and {scheme}.")
             else:
                 print("Invalid committer selection.")
-
+            plt.figure().set_figwidth(10)
             plt.bar(features, mydict[committer][scheme])
             plt.xlabel('Features')
             plt.ylabel('Total Number of Commits')
