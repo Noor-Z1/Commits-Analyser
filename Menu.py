@@ -1,11 +1,11 @@
 import main
 import matplotlib.pyplot as plt
 def select_classification_scheme():
-    print("Select a Classification Scheme: ")
+    print("\nSelect a Classification Scheme: ")
     print(" 1. Swanson's Maintenance Tasks (SwM)")
     print(" 2. NFR Labelling")
     print(" 3. Software Evolution tasks")
-    choice = int(input("Enter your choice: "))
+    choice = int(input("Enter your choice:\n"))
     return choice
 
 
@@ -14,7 +14,7 @@ def select_committer(committers):
     for i, committer in enumerate(committers, start=1):
         print(f"    {i}. {committer}")
 
-    choice = int(input(f"Enter your choice (1-{len(committers)}): "))
+    choice = int(input(f"\nEnter your choice (1-{len(committers)}): "))
     if 1 <= choice <= len(committers):
         return committers[choice - 1]
     else:
@@ -23,11 +23,18 @@ def select_features(features):
     print("Select a Feature:")
     for i, feature in enumerate(features, start=1):
         print(f"    {i}. {feature}")
-    choice = int(input(f"Enter your choice (1-{len(features)}): "))
+    choice = int(input(f"Enter your choice (1-{len(features)}):\n "))
     if 1 <= choice <= len(features):
         return choice-1
     else:
         return None
+def get_feature_name(features,choice):
+    name = ''
+    for i, feature in enumerate(features, start=1):
+        if choice+1 == i:
+            name = feature
+            break
+    return name
 def scheme_feature_declaration():
     scheme_choice = select_classification_scheme()
     features = []
@@ -74,13 +81,12 @@ def menu():
             plt.ylabel('Total Number of Commits')
             plt.title(f'Comparison for {committer}\'s Commits Classified by {scheme}')
             plt.show()
-
         elif option == 2:
-            scheme_choice = select_classification_scheme()
-            scheme = scheme_feature_declaration()[0]
-            features = scheme_feature_declaration()[1]
-
+            temp = scheme_feature_declaration()
+            scheme = temp[0]
+            features = temp[1]
             feature_choice = select_features(features)
+            feature_name = get_feature_name(features,feature_choice)
             feature_list = []
             for name, value in mydict.items():
                 feature_list.append(value[scheme][feature_choice])
@@ -88,19 +94,18 @@ def menu():
             plt.bar(committers, feature_list)
             plt.xlabel('Committers')
             plt.ylabel('Total Number of Commits')
-            plt.title(f'Comparison for all developers Commits Classified by feature {feature_choice + 1}')
+            plt.title(f'Comparison for all developers Commits Classified by {feature_name} feature ')
             plt.show()
             print()
         elif option == 3:
-            scheme_choice = select_classification_scheme()
-            scheme = scheme_feature_declaration()[0]
-            features = scheme_feature_declaration()[1]
-
+            temp = scheme_feature_declaration()
+            scheme = temp[0]
+            features = temp[1]
             feature_choice = select_features(features)
+            feature_name = get_feature_name(features, feature_choice)
             max_names = []
             max_commit = -1
             for name, values in mydict.items():
-                print(f"Committer: {name} - values: {values}")
                 if values[scheme][feature_choice] > max_commit:
                     max_commit = values[scheme][feature_choice]
                     max_names = [name]
@@ -108,11 +113,10 @@ def menu():
                     max_names.append(name)
             for name in max_names:
                 print(f"\nCommitter: {name} ")
-                print(f"Feature: {feature_choice + 1} - Value: {max_commit}")
+                print(f"Feature: {feature_name} - Value: {max_commit}")
         elif option == 4:
             print("Exiting the program.")
             break
-
 
 if __name__ == '__main__':
     menu()
