@@ -1,6 +1,3 @@
-# CNG445 Fall 2023
-# Assignment 1: A Data Analyser for the Classification Commit Messages
-# Authors: Noor Ul Zain 2528644 and Shemin Samiei 2542389
 import os
 import sys
 
