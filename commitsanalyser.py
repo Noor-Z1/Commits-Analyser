@@ -1,12 +1,11 @@
-# CNG445 Fall 2023
-# Assignment 1: A Data Analyser for the Classification Commit Messages
-# Authors: Noor Ul Zain 2528644 and Shemin Samiei 2542389
+from dictionaries import *
 import os
 import sys
+import matplotlib.pyplot as plt
 
 # Check if the correct number of command-line arguments is provided
 if len(sys.argv) != 3:
-    print("Usage: python commitsanalyser.py <file1.ext> <file2.ext>")
+    print("Usage: python dictionaries.py <file1.ext> <file2.ext>")
     sys.exit(1)
 
 # Extract the file names from command-line arguments
@@ -17,77 +16,159 @@ identities_file = sys.argv[2]
 if not os.path.exists(commits_file) or not os.path.exists(identities_file):
     print("One or more specified files do not exist.")
     sys.exit(1)
-# this function takes the arguments from the command line of the filenames
-# the function then parses both the files based on the specification of the assignment
-# and then creates the required dictionary hierarchy
+'''
+Since the menu asks for selecting the scheme 
+few times I created a separate function for that
+'''
+def select_classification_scheme():
+    print("\nSelect a Classification Scheme: ")
+    print(" 1. Swanson's Maintenance Tasks (SwM)")
+    print(" 2. NFR Labelling")
+    print(" 3. Software Evolution tasks")
+    choice = int(input("Enter your choice:\n"))
+    return choice
+'''
+This function takes the committers list from the dictionary 
+and displays them on the screen in order for the user to choose
+one and returns user's choice
+'''
+def select_committer(committers):
+    print("Select a Committer:")
+    for i, committer in enumerate(committers, start=1):
+        print(f"    {i}. {committer}")
 
-def data_preprocessing(file1, file2):
+    choice = int(input(f"\nEnter your choice (1-{len(committers)}): "))
+    if 1 <= choice <= len(committers):
+        return committers[choice - 1]
+    else:
+        return None
+#Same approach as (committer) goes for this function
+def select_features(features):
+    print("Select a Feature:")
+    for i, feature in enumerate(features, start=1):
+        print(f"    {i}. {feature}")
+    choice = int(input(f"Enter your choice (1-{len(features)}):\n "))
+    if 1 <= choice <= len(features):
+        return choice-1
+    else:
+        return None
 
-    # this is the auxiliary dictionary where I store the unique committers (based on their names)
-    # and store a list of the committer IDs they have used as the value of the key
+'''
+this function returns the name of the feature that user already selected
+(since it is not available in the dictionary)
+it will be used to be displayed on the bar chart/screen
+'''
+def get_feature_name(features,choice):
+    name = ''
+    for i, feature in enumerate(features, start=1):
+        if choice+1 == i:
+            name = feature
+            break
+    return name
+'''
+since the user needs to see and select 
+the scheme with its related features
+a tuple will be returned and used for
+both of them using this function
+'''
+def scheme_feature_declaration():
+    scheme_choice = select_classification_scheme()
+    features = []
+    scheme = ''
+    if scheme_choice == 1:
+        scheme = "SwM tasks"
+        features = ["Corrective Tasks", "Adaptive Tasks", "Perfective Tasks"]
+    elif scheme_choice == 2:
+        scheme = "NFR Labelling"
+        features = ["Maintainability", "Usability", "Functionality", "Reliability", "Efficiency",
+                    "Portability"]
+    elif scheme_choice == 3:
+        scheme = "SoftEvol tasks"
+        features = ["Forward Engineering", "Re-Engineering", "Corrective Engineering", "Management"]
+    return scheme, features
+def menu():
+    #getting the dictionary(using the files declared from cmd line)
+    #and retrieving the committers' names as a list from the dictionary
+    mydict = data_preprocessing(identities_file, commits_file)
+    committers = list(mydict.keys())
+    while True:
+        print("\nMenu:")
+        print("1. Select Classification Scheme and Committer")
+        print("2. Select Classification Scheme and Feature")
+        print("3. Print the developer with the maximum number of commits")
+        print("4. Exit")
+        option = int(input("Enter your choice: \n"))
 
-    identities = {}
-    with open(file1) as f:
-        lines = f.readlines()
-        for line in lines[1:]:  # skip the first line because it has the format info
-            if line.split(',')[1] in identities:  # if the name is already in the dictionary
-                identities[line.split(',')[1]].append(line.split(',')[0])
+        if option == 1:
+            committer = select_committer(committers)
+            #scheme and features are needed for the bar chart
+            scheme = ''
+            features = []
+            if committer:
+                '''since the select_scheme function
+                (which has print() function in it) 
+                is used inside scheme_feature_declaration
+                I used a temp value to get the tuple 
+                (not to have repetition) and 
+                use it relatively for scheme and features'''
+                temp = scheme_feature_declaration()
+                scheme = temp[0] #selected scheme by the user
+                features = temp[1] #features names list related to scheme
+                if committer in mydict and scheme in mydict[committer]:
+                    counts = mydict[committer][scheme]
+                    print(f"Commits by {scheme} for {committer}: {counts}")
+                else:
+                    print(f"No data found for {committer} and {scheme}.")
             else:
-                identities[line.split(',')[1]] = [line.split(',')[0]]
-
-    f.close()
-
-    # let's create the nested dictionary with the first key being the committer name
-    # and for each commiter we create a dictionary of the classified tasks
-
-    mydict = {}
-
-    for name in identities:
-        mydict[name] = {"SwM tasks": [0, 0, 0], "NFR Labelling": [0, 0, 0, 0, 0, 0], "SoftEvol tasks": [0, 0, 0, 0]}
-
-    # Now we pre-process the commits file and fill the nested dictionary
-
-    with open(file2) as f:
-        lines = f.readlines()
-
-        for line in lines[1:]:
-            l = line.split(',')
-
-            # first we find based on the committer ID, the committer name using the aux dictionary we created before
-            for name, values in identities.items():
-                if l[14] in values:
-                    found_name = name
-                    break  # we found the committer name
-
-            # now we fill the nested dictionary, updating the counters for the specified
-            # classification schemes based on the found committer
-            for name, values in mydict[found_name].items():
-                if name == "SwM tasks":
-                    mydict[found_name][name][0] += int(l[1])
-                    mydict[found_name][name][1] += int(l[2])
-                    mydict[found_name][name][2] += int(l[3])
-                elif name == "NFR Labelling":
-                    mydict[found_name][name][0] += int(l[4])
-                    mydict[found_name][name][1] += int(l[5])
-                    mydict[found_name][name][2] += int(l[6])
-                    mydict[found_name][name][3] += int(l[7])
-                    mydict[found_name][name][4] += int(l[8])
-                    mydict[found_name][name][5] += int(l[9])
-                elif name == "SoftEvol tasks":
-                    mydict[found_name][name][0] += int(l[10])
-                    mydict[found_name][name][1] += int(l[11])
-                    mydict[found_name][name][2] += int(l[12])
-                    mydict[found_name][name][3] += int(l[13])
-
-    f.close()
-
-    return mydict
-
-
-def main():
-    mydict = data_preprocessing(identities_file ,commits_file)
-    print(mydict)
-
+                print("Invalid committer selection.")
+            plt.figure().set_figwidth(10)
+            plt.bar(features, mydict[committer][scheme])
+            plt.xlabel('Features')
+            plt.ylabel('Total Number of Commits')
+            plt.title(f'Comparison for {committer}\'s Commits Classified by {scheme}')
+            plt.show()
+        elif option == 2:
+            temp = scheme_feature_declaration()
+            scheme = temp[0] #selected scheme by the user
+            features = temp[1] #features names list related to scheme
+            feature_choice = select_features(features) #selected feature by the user (a number)
+            feature_name = get_feature_name(features,feature_choice) #selected feature by the user (Name)
+            feature_list = [] #needed for bar chart
+            '''Retrieved the values of the feature that 
+            user selected from the dictionary with a loop.
+            This list will be used for creating the numbers
+            on the bar chart'''
+            for name, value in mydict.items():
+                feature_list.append(value[scheme][feature_choice])
+            plt.figure().set_figwidth(15)
+            plt.bar(committers, feature_list)
+            plt.xlabel('Committers')
+            plt.ylabel('Total Number of Commits')
+            plt.title(f'Comparison for all developers Commits Classified by {feature_name} feature ')
+            plt.show()
+            print()
+        elif option == 3:
+            temp = scheme_feature_declaration()
+            scheme = temp[0] #selected scheme by the user
+            features = temp[1] #features names list related to scheme
+            feature_choice = select_features(features) #selected feature by the user (a number)
+            feature_name = get_feature_name(features, feature_choice) #selected feature by the user (Name)
+            '''these two variables are needed to keep track of the 
+            committer's name and his/her commits'''
+            max_names = [] #It is a list because two/more committers can have the same #of commits
+            max_commit = -1 #initial value to compare should be a negative number
+            for name, values in mydict.items():
+                if values[scheme][feature_choice] > max_commit:
+                    max_commit = values[scheme][feature_choice]
+                    max_names = [name]
+                elif values[scheme][feature_choice] == max_commit:
+                    max_names.append(name)
+            for name in max_names:
+                print(f"\nCommitter: {name} ")
+                print(f"Feature: {feature_name} - Value: {max_commit}")
+        elif option == 4:
+            print("Exiting the program.")
+            break
 
 if __name__ == '__main__':
-    main()
+    menu()
