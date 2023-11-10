@@ -1,0 +1,13 @@
+Commiter ID,Full Name,eMail
+1,Brosch Florian,flo.brosch@gmail.com
+2,Luca Bruno,lucabru@src.gnome.org
+3,Luca Bruno,luca.bruno@immobiliare.it
+5,Thomas Seidl,remus@gmx.net
+6,Martin Reiterer,martin.reiterer@inso.tuwien.ac.at
+7,Martin Reiterer,martin.reiterer.MR@gmail.com
+8,Martin Reiterer,martin.reiterer.mr@gmail.com
+11,Kilian Matt,kilian.matt@inso.tuwien.ac.at
+14,Mark Struberg,struberg@apache.org
+15,Mark Struberg,struberg@localhost.localdomain
+16,Evan Nemerson,evan@polussystems.com
+17,Evan Nemerson,evan@coeus-group.com

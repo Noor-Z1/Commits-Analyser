@@ -1,0 +1,341 @@
+Commit ID,sw_adaptive,sw_corrective,sw_perfective,nfr_mainainability,nfr_usability,nfr_functionality,nfr_reliability,nfr_efficiency,nfr_portability,hl_forward,hl_reengineering,hl_corrective,hl_management,Commiter ID,Commit Message
+1,1,0,0,0,0,1,0,0,0,1,0,0,0,1,Add support for unowned/weak array elements
+2,0,0,1,0,1,0,0,0,0,1,0,0,0,1,drivers: Mark arrays as unowned instead of weak
+3,1,0,0,0,1,1,0,0,0,1,0,0,0,1,ctypresolver: signals: register default implementations
+4,1,0,0,0,0,1,0,0,0,1,0,0,0,1,signals: collect default implementations
+5,0,1,0,0,0,1,0,0,0,0,0,1,0,1,embedded: Fix check() for relative paths
+6,0,0,1,0,0,0,0,0,0,0,0,0,1,1,doap++
+7,1,0,0,0,0,1,0,0,0,1,0,0,0,1,gir-importer: docbook: process all <doc-* tags
+8,1,0,0,0,0,1,0,0,0,1,0,0,0,1,gir: ignore type struct docs
+9,1,0,0,0,0,1,0,0,0,1,0,0,0,1,girmetadata: allow to override <ONLINE>
+10,1,0,0,0,0,1,0,0,0,1,0,0,0,1,gir-importer: docbook: resolve internal links
+11,1,0,0,0,0,1,0,0,0,1,0,0,0,1,gir-importer: markdown: resolve internal links
+12,1,0,0,0,1,1,0,0,0,1,0,0,0,1,Allow to inherit from imported docs
+13,0,1,0,0,0,1,0,0,0,0,0,1,0,1,"html: add <meta charset=""UTF-8""/>"
+14,0,1,0,0,0,1,1,0,0,0,0,1,0,1,gir-importer: skip <union> elements without ctype-attributes
+15,0,0,1,0,0,1,0,0,0,0,1,0,0,1,Split process-comments into parse and check runs
+16,1,0,0,0,1,1,0,0,0,1,0,0,0,1,"ctyperesolver, virtual signals: register function pointer names"
+17,1,0,0,0,0,1,0,0,0,1,0,0,0,1,docbook: improve implicit parameter handling
+18,1,0,0,0,1,1,0,0,0,1,0,0,0,1,Improve handling for c::this
+19,1,0,0,0,0,1,0,0,0,1,0,0,0,1,docbook-parser: Accept symbols with trailing 's'
+20,1,0,0,0,1,1,0,0,0,1,0,0,0,1,Improve CTypeResolver for virtual/abstract methods
+21,1,0,0,0,0,1,0,0,0,1,0,0,0,1,gir-importer: add support for markdown
+22,1,0,0,0,1,1,0,0,0,1,0,0,0,1,devhelp: Generate better keywords
+23,0,1,0,0,0,1,0,0,0,0,0,1,0,1,devhelp: Add missing keywords
+24,1,0,0,1,0,1,0,0,0,1,0,0,0,1,"basic doclet: Add ""wiki-index-name""  Used by valadoc.org"
+25,1,0,0,0,0,0,0,0,1,0,1,0,0,1,Add support for cgraphs  Based on patch by Richard Schwarting  Fixes bug 703688.
+26,1,0,0,0,1,1,0,0,0,1,0,0,0,1,Importer: Resolve c::*_finish methods
+27,1,0,0,0,0,1,1,0,0,1,0,0,0,1,gir-importer: Ignore <annotation> tags
+28,1,0,0,0,0,1,0,0,0,1,0,0,0,1,gir-importer: Add support for <instance-parameter>
+29,0,0,1,1,0,0,0,0,0,0,0,0,1,1,coding style changes
+30,1,0,0,0,1,1,0,0,0,1,0,0,0,1,gtkdoc: Document implicit struct functions
+31,1,0,0,0,0,1,0,0,0,1,0,0,0,1,"libvaladoc: Add Struct.copy_function_cname, Struct.destroy_function_cname"
+32,0,1,0,0,1,1,0,0,0,0,0,1,0,2,poppler-glib: Drop unnecessary dependencies  Thanks to tarnyko for the patch.  Fixes bug 702873.
+33,1,0,0,0,1,1,0,0,0,1,0,0,0,2,gtktemplate: Allow connecting signals of the template class itself
+34,1,0,0,0,1,1,0,0,0,1,0,0,0,2,codegen: Allow scope=async delegates to be used in vala code  Fixes bug 703804
+35,1,0,0,0,1,1,0,0,0,1,0,0,0,2,Align gtk templates to new gtk+/glib api  Based on patch by ebassi.
+36,0,1,0,0,0,1,0,0,0,0,0,1,0,2,libarchive: Fix read_data_block C name  Fixes bug 704612.
+37,0,1,0,0,0,1,0,0,0,0,0,1,0,2,Do not warn for non-default parameter if it's ellipsis
+38,0,1,0,0,0,1,0,0,0,0,0,1,0,2,girparser: Support scope=async parameters.  Based on patch by Evan.  Fixes bug 704176.
+39,0,1,0,0,0,1,0,0,0,0,0,1,0,2,Do not warn about non-default parameters for coroutines.  Reopens bug 644241.
+40,1,0,0,0,1,1,0,0,0,1,0,0,0,2,Support chain up to constructv functions.
+41,1,0,0,0,0,1,0,0,0,1,0,0,0,2,"codegen: Inherit array_{length,null_terminated} from base parameter  First commit to start inheriting ccode attributes of parameters from base parameters of base methods.  Partially fixes bug 642885."
+42,1,0,0,0,0,1,0,0,0,1,0,0,0,2,"codegen: Inherit array_{length,null_terminated} from base parameter  First commit to start inheriting ccode attributes of parameters from base parameters of base methods.  Partially fixes bug 642885."
+43,0,1,0,1,0,0,0,0,0,0,0,1,0,2,Fix subtle bug in flowanalyzer that made the compiler crash  By not copying the datatype the parent_node was overwritten. The bug was reproducible only with G_SLICE=always-malloc .
+44,1,0,0,0,0,0,0,0,0,1,0,0,0,2,"Set parent_node and always copy datatype when assigned to code nodes.  This is a delicate patch that fixes subtle memory corruption bugs in libvala users and the compiler itself. It might break some application, so this commit is open for testing."
+45,1,0,0,0,0,1,0,0,0,1,0,0,0,2,"Revert ""Set parent_node and always copy datatype when assigned to code nodes.""  This reverts commit a09c9e93af0d64b9331c274de573465fe070b722.  Fixes bug 709587."
+46,0,0,1,0,0,0,0,0,0,0,0,0,1,2,Fix crash due to not copying a type
+47,0,1,0,0,0,1,0,0,0,0,0,1,0,2,"girparser: Support new gir format (deprecated, doc-version, doc-deprecated)"
+48,1,0,0,0,1,1,0,0,0,1,0,0,0,2,Merge branch 'staging'  Conflicts: 	vala/valagirparser.vala
+49,0,1,0,0,0,1,0,0,0,0,0,1,0,2,Fix memory leak when assigning an owned gvariant to an unowned variable  Fixes bug 710882.
+50,1,0,0,0,1,0,0,0,0,1,0,0,0,2,"Revert ""gio-2.0: Fix uint8[]/char** types for contents parameters for g_file_[load|replace]_contents()""  This reverts commit e4ef6fb72f560da385a09d262ef8afd2b64a1fc8."
+51,1,0,0,0,0,1,0,0,0,1,0,0,0,2,gio-2.0: Update. New Notification and Subprocess api  Based on patch by Florian Müllner.  Fixes bug 710912.
+52,1,0,0,0,0,1,0,0,0,1,0,0,0,2,codegen: Zero length of arrays when transferring ownership  This allows var data = (owned) aGenericArray.data; without later setting data.len = 0 manually.
+53,0,1,0,0,0,1,0,0,0,0,0,1,0,2,analyzer: Fix critical when catch clause does not catch an ErrorType  Based on patch by Severin Heiniger.  Fixes bug 670806.
+54,0,1,0,0,0,1,0,0,0,0,0,1,0,2,"gtk+-2.0, gtk+-3.0: Improve TextMark constructor with nullables and defaults"
+55,0,1,0,0,1,1,0,0,0,0,0,1,0,2,girparser: Fix some source reference when reporting errors after parsing
+56,0,1,0,0,0,1,0,0,0,0,0,1,0,2,girparser: Handle delegate aliases  Fixes bug 667751
+57,0,1,0,0,1,1,1,0,0,0,0,1,0,2,codegen: Fix memory leak introduced by fe9beb82b6809
+58,0,0,1,1,0,0,0,0,0,0,0,0,1,2,gtktemplate: Handle callbacks for detailed signals  Fixes bug 720825
+59,1,0,0,0,1,1,0,0,0,1,1,0,0,2,"Fix coalescing operator semantics check.  The left operand was not put in any code block before the check, thus it wasn't able to transform itself.  Fixes bug 691514."
+60,0,1,0,0,0,1,1,0,0,0,0,1,0,2,"codegen: Support ""foo is G"""
+61,0,1,0,0,0,1,0,0,0,0,0,1,0,2,glib-2.0: Fix short.abs() to be an instance method
+62,1,0,0,0,1,1,0,0,0,1,0,0,0,2,Fix calling methods on struct pointers  Fixes bug 686190
+63,0,0,1,0,0,1,0,0,0,1,0,0,0,2,"codegen: Reduce the number of temporary variables  If a temporary variable has been generated internally, do not create another regardless of whether it's floating or not."
+64,0,1,0,0,0,1,0,0,0,0,0,1,0,2,codegen: Always assume external interface properties are gobject properties
+65,1,0,0,0,1,1,0,0,0,1,0,0,0,3,glib-2.0: fix Hmac.update bindings  Fixes bug 735041
+66,1,0,0,0,0,1,0,0,0,1,0,0,0,2,Report warning instead of error for private struct fields
+67,1,0,0,0,1,1,0,0,0,1,0,0,0,3,Fix critical when using binary expression in a generics context  Fixes bug 735117
+68,0,1,0,0,1,1,0,0,0,0,0,1,0,3,Fix regression when assigning owned expressions to unowned variables.  The regression was introduced by db462e6f919da758fb.  Fixes bug 736016
+69,1,0,0,0,0,1,0,0,0,1,0,0,0,3,"Revert ""Fix regression when assigning owned expressions to unowned variables.""  This reverts commit ba1fa0759989dcbb9046c7dfc06cce6c4aa23411.  Due to bug #736774"
+70,0,0,1,0,0,1,1,0,0,1,0,0,0,3,gtk+-3.0: Add a11y.h header to accessible objects  Based on patch by Peter Vagner  Fixes bug 735265
+71,0,0,1,1,0,1,1,0,0,1,0,0,0,3,gstreamer-1.0: remove owned to floating reference parameters  Commit 6296d34707 (bug 730983) added the owned keyword back without any reason.  Fixes bug 738012
+72,0,0,1,1,0,1,1,0,0,1,0,0,0,3,gobject-2.0: Add DestroysInstance to Binding.unbind()  Fixes bug 740117
+73,0,0,1,1,0,1,1,0,0,1,0,0,0,5,Fixed documentation comments of the service interface and abstract class.
+74,0,0,1,1,0,0,0,0,0,0,0,0,1,5,Issue #1471310 by drunken monkey: Fixed handling of unset fields when indexing.
+75,0,1,0,0,0,1,0,0,0,0,0,1,0,5,Issue #1819412 by drunken monkey: Added clean way for retrieving an index's data alterations and processors.
+76,0,1,0,0,0,0,0,0,1,0,0,1,0,5,Added two @todos to includes/query.inc.
+77,1,0,0,0,1,1,0,0,0,1,0,0,0,5,Issue #1959088 by drunken monkey: Fixed titles for contextual filters.
+78,1,0,0,0,0,1,0,0,0,1,0,0,0,5,Adapted CHANGELOG.txt to 1.5 release.
+79,0,0,1,1,0,0,0,0,0,0,1,0,0,5,Fixed coding style of the SearchApiStopWords processor.
+80,0,0,1,0,0,0,0,0,0,0,1,0,0,5,Issue #872912 by drunken monkey: Expanded and fixed test cases.
+81,1,0,0,0,1,1,0,0,0,1,0,0,0,5,Issue #1992228 by drunken monkey: Fixed current search block for empty keys.
+82,0,1,0,0,0,1,0,0,0,0,0,1,0,5,"Issue #1993536 by drunken monkey, jpieck: Fixed handling of empty values in processors."
+83,1,0,0,0,1,1,0,0,0,1,0,0,0,5,"Issue #1697246 by drunken monkey: Added ""Parse mode"" option to views."
+84,1,0,0,0,1,1,0,0,0,1,0,0,0,5,Minor documentation fixes.
+85,0,1,0,0,0,0,1,0,0,0,0,1,0,5,Issue #1346276 by drunken monkey: Fixed Tokenizer should only run on fulltext fields.
+86,1,0,0,0,0,1,0,0,0,1,0,0,0,5,Improved documentation for datasource controllers.
+87,1,0,0,1,0,0,0,0,0,1,0,0,0,5,Improved documentation for datasource controllers.
+88,1,0,0,0,0,1,0,0,0,1,0,0,0,5,Fixed CHANGELOG.txt.
+89,1,0,0,0,1,1,0,0,0,1,0,0,0,5,Adapted CHANGELOG.txt to 1.6 release.
+90,0,0,1,0,1,0,0,0,0,1,0,0,0,5,"Issue #1285794 by drunken monkey: Fixed ""All"" option in Views' exposed ""Items per page"" setting."
+91,0,0,1,0,1,0,0,0,0,1,0,0,0,5,Issue #1694832 by drunken monkey: Fixed index field settings getting stale when Field API field settings change.
+92,0,0,1,0,1,0,0,0,0,1,0,0,0,5,"Issue #1288724 by brunodbo, drunken monkey, fearlsgroove: Added option for using OR in Views fulltext search."
+93,1,0,0,0,1,1,0,0,0,1,0,0,0,5,Issue #2013581 by drunken monkey: Added multi-valued field to test module.
+94,0,1,0,0,1,1,0,0,0,0,0,1,0,5,"Issue #2010116 by drunken monkey: Enabled ""Index items immediately"" for the default node index."
+95,0,0,1,0,1,0,0,0,0,1,0,0,0,5,Issue #1999858 by drunken monkey: Cleaned up API documentation for data alterations.
+96,0,1,0,0,0,1,0,0,0,0,0,1,0,5,Follow-up to #1288724 by drunken monkey: Set proper default for fulltext search filter operator.
+97,0,0,1,0,1,0,0,0,0,0,0,0,1,5,Issue #2012706 by drunken monkey: Fixed $reset parameter for load functions.
+98,0,0,1,0,1,0,0,0,0,0,0,0,1,5,Issue #1837782 by drunken monkey: Fixed enabling of indexes through the Status tab.
+99,0,0,1,1,0,0,0,0,0,0,1,0,0,5,Issue #1310970 by drunken monkey: Added improved UI help for determining which fields are available for sorting.
+100,1,0,0,0,0,1,0,0,0,1,0,0,0,5,Issue #1246998 by drunken monkey: Fixed deletion of items in read-only indexes.
+101,1,0,0,0,0,1,0,0,0,1,0,0,0,5,Issue #1311260 by drunken monkey: Fixed tokenizing of string fields.
+102,0,0,1,1,0,0,0,0,0,0,1,0,0,5,Fix documentation style of includes/query.inc.
+103,1,0,0,0,0,1,0,0,0,1,0,0,0,5,Issue #2024189 by drunken monkey: Improved serialization of the query class.
+104,0,1,0,0,0,1,0,0,0,0,0,1,0,5,Small documentation comment fix.
+105,1,0,0,0,0,1,0,0,0,1,0,0,0,6,updated licenses
+106,0,0,1,0,1,0,0,0,0,1,0,0,0,6,updated licenses
+107,1,0,0,0,0,1,0,0,0,1,0,0,0,6,updated licenses
+108,0,1,0,0,0,1,0,0,0,0,0,1,0,6,updated licenses
+109,0,0,1,0,0,0,0,0,0,0,1,0,0,6,updated licenses
+110,0,0,1,0,1,0,0,0,0,0,0,0,1,6,updated licenses
+111,1,0,0,0,0,1,0,0,0,1,0,0,0,6,updated licenses
+112,1,0,0,0,1,1,0,0,0,1,0,0,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+113,0,0,1,0,1,0,0,0,0,0,1,0,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+114,0,1,0,0,1,1,0,0,0,0,0,1,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+115,1,0,0,1,0,1,0,0,0,1,0,0,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+116,1,0,0,1,0,0,0,0,0,1,0,0,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+117,0,1,0,0,0,1,1,0,0,0,0,1,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+118,0,1,0,0,0,1,0,0,0,0,0,1,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+119,0,1,0,0,0,1,0,0,0,0,0,1,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+120,1,0,0,0,1,1,0,0,0,1,0,0,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+121,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Adapts the namespace of all TapiJI plug-ins to org.eclipselabs.tapiji.*.
+122,0,1,0,0,0,1,1,0,0,0,0,1,0,6,Fixes bug in generation of Java bundle key hovers.
+123,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Fixes minor bugs.
+124,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Fixes minor bugs
+125,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Fixes minor bugs
+126,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Fixes minor bugs
+127,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Fixes minor bugs
+128,1,0,0,0,0,1,0,0,0,1,0,0,0,6,adapt plugin versions
+129,0,0,1,1,0,0,0,0,0,0,1,0,0,6,Releases V0.0.2
+130,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Fixing typo and minor bug.
+131,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Fixes configuration bugs.
+132,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Adapts product configuration.
+133,1,0,0,0,0,1,0,0,0,1,0,0,0,6,Fixing resource save error.
+134,1,0,0,0,0,1,0,0,0,1,0,0,0,7,Creating private branch for the implementation of key refactoring functionality.
+135,0,1,0,0,0,1,0,0,0,0,0,1,0,7,removes  and  plug-ins
+136,1,0,0,0,0,1,0,0,0,1,0,0,0,7,removes essiembre resource bundle editor
+137,1,0,0,0,0,1,0,0,0,1,0,0,0,7,adds the plug-ins  and
+138,0,0,1,1,0,0,0,0,0,0,1,0,0,7,adds missing folders in  plug-in
+139,1,0,0,0,0,1,0,0,0,1,0,0,0,7,adds missing icons folder for
+140,1,0,0,0,1,1,0,0,0,1,0,0,0,7,removes ui core
+141,1,0,0,0,0,1,0,0,0,1,0,0,0,7,adds ui core
+142,1,0,0,0,1,1,0,0,0,1,0,0,0,7,Creates `stable` branch.  The stable branch is copied from `issue-32` and used for getting a stable release that is based on the babel editor plug-in.
+143,1,0,0,0,0,1,0,0,0,1,0,0,0,7,Creates branch `master`
+144,1,0,0,0,1,0,0,0,0,1,0,0,0,7,Adapts babel core for supporting a Compiler compliance level of 1.5.  Revoves @Override annotation that lead to export errors with a configured compiler compliance level of 1.5.
+145,0,1,0,0,0,1,1,0,0,0,0,1,0,7,Removes unused dependencies/imports.  First step of cleaning up the current codebase. All Java imports have been revisited and organized.
+146,1,0,0,0,0,1,0,0,0,1,0,0,0,7,Prototypes marker update approach.  Gets the markers current position information from the abstract marker annotation model.
+147,0,1,0,0,0,1,1,0,0,0,0,1,0,7,Cleans up plugin configuration files.  Cleans up build properties.
+148,0,1,0,0,0,1,0,0,0,0,0,1,0,7,Merges  into .
+149,1,0,0,0,0,1,0,0,0,1,0,0,0,7,removes the outdated package namespace `at.ac.tuwien.inso.tapiji`.
+150,0,1,0,0,0,0,1,0,0,0,0,1,0,7,Adapts the translator for using the messages editor.
+151,0,0,1,1,0,0,0,0,0,0,1,0,0,7,"Defines the babel editor dependency to the PDE as optional.  Fixes Issue 45. Fixes Issue 51. Uses Java reflection for accessing PDE related classes. If the PDE plug-in isn't loaded within the currently executed Eclipse instance, the Babel editor skips checks for Fragment projects. Also fixes a minor typo within the babel editor UI."
+152,0,0,1,1,0,0,0,0,0,0,1,0,0,7,removes remaining eclipselabs package stubs.
+153,1,0,0,0,1,1,0,0,0,1,0,0,0,7,Renames also the plugin directories.
+154,1,0,0,0,1,0,0,0,0,1,0,0,0,7,Removes the unused completion proposal `ValueOfResourceBundleProposal`.
+155,1,0,0,0,0,1,0,0,0,1,0,0,0,7,"Fixes some critical auto-complete issues.  Addresses Issue 62 Open issues:  * Calling auto-complete in the middle of a string, leads to wrong outcome.  * Calling auto-complete in bundle context (without string literal context) leads to wrong result."
+156,0,1,0,0,0,1,0,0,0,0,0,1,0,7,Fixes further critical problems with auto-completion.
+157,1,0,0,0,1,1,0,0,0,1,0,0,0,7,Final cleanup of the java auto-complete functionality.  Open point:  * use start and end session callbacks
+158,0,0,1,0,1,1,0,0,0,1,0,0,0,7,"Disables tapiji auto-complete, when the user types non-string-literals.  Fixes Issue 63"
+159,0,1,0,0,0,1,1,0,0,0,0,1,0,7,increases generation performace of auto-complete proposals.  Fixes Issue 62.
+160,1,0,0,0,1,1,0,0,0,1,0,0,0,7,Renames `StringLiteralAuditor` to `I18nBuilder`.  Addresses Issue 72.
+161,1,0,0,0,0,1,0,0,0,1,0,0,0,7,Encapsulates extension point management into `ExtensionManager`.  Fixes Issue 72.  Applied changes:  * Extract extension point handling into the new static manager class `ExtensionManager`  * Removes the static initialization block from `I18nBuilder`
+162,0,1,0,0,0,1,0,0,0,0,0,1,0,7,Adds missing code license headers.  Adresses Issue 75.
+163,1,0,0,0,1,1,0,0,0,1,0,0,0,7,Renames `tapiji.tools.java` to `tapiji.tools.java.ui`
+164,0,1,0,0,0,1,0,0,0,0,0,1,0,7,Adds the new project `tapiji.tools.java`.
+165,0,1,0,0,0,1,0,0,0,0,0,1,0,7,Separates core and ui concerns for the java extension plug-in.
+166,1,0,0,0,1,1,1,0,0,1,0,0,0,8,Adapts license headers.  Fixes Issue 75. Adds Contributors section.
+167,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Adds contribution comments for Michael Gasser.
+168,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Cleans up `tapiji.tools.java.ui`.
+169,1,0,0,0,1,1,0,0,0,1,0,0,0,8,Cleans up build stragegy.
+170,0,1,0,0,1,0,0,0,0,0,0,1,0,8,Improves performance of building resource / cleans up projects.  Fixes Issue 76.  Touches resources after creating a new resource bundle entry.
+171,1,0,0,0,0,1,0,0,0,1,0,0,0,8,DELTASPIKE-241 new weld-arquillian container fixes BDA issues
+172,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Separates UI and non-UI concerns for the core plug-in.  Contributes Issue 73.  * Adapts the Activator to extend `Plugin` instead of `AbstractUiPlugin`  * Moves marker and nature management to `core.ui`
+173,0,0,1,1,0,0,0,0,0,0,1,0,0,8,Adds missing resources to translator plug-in.
+174,0,1,0,0,0,1,1,0,0,0,0,1,0,8,Fixes marker update problem in Messages editor.  Fixes Issue 79.
+175,1,0,0,0,1,1,0,0,0,1,0,0,0,8,Minor clean up.
+176,0,0,1,1,0,0,0,0,0,0,1,0,0,8,Updates license headers.
+177,0,1,0,0,1,0,0,0,0,0,0,1,0,8,Creates new master from stable.
+178,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Deletes branch master.
+179,0,1,0,0,0,1,0,0,0,0,0,1,0,8,Renames branch 'master_tmp' to 'master'.
+180,0,0,1,0,0,0,0,0,0,0,0,0,1,8,"Removes out-dated LGPL sources and adapts copyright headers.  The wording ""TapiJI"" located in the copyright header has been replaced with a list of all contributors that have modified a particular file."
+181,0,1,0,0,0,1,0,0,0,0,0,1,0,8,Fixes bugs in nature assignment.
+182,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Fixes bug in CreateResourceBundleEntryDialog.
+183,0,1,0,0,0,1,1,0,0,0,0,1,0,8,"Fixes startup exception in rbmanager plugin and detects bundles during startup.  Fixes Issue 87 References Issue 50 Fixes a excetption within the ResourceBundleDetectionVisitor that occurred during startup. Moreover, the TapiJI core triggers a search for Resource bundles directly after startup."
+184,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Fixes bug in loading resource bundles.  During startup some resource bundles are not detected. The reason therefore was an inproperly handled exception. This change adapts exception handling as well as bundle loading.
+185,0,0,1,0,1,0,0,0,0,1,0,0,0,8,Merges revisions 500-560 from stable into master branch.
+186,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Merges stable into master.
+187,1,1,1,0,1,1,0,0,0,1,1,1,0,8,Merges stable into master.
+188,0,1,0,0,0,1,0,0,0,0,0,1,0,8,Merges stable into master.
+189,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Fix NPE during startup of translator application.  Fixes NPE during lookup of project name for RCP translator.
+190,0,1,0,0,0,1,0,0,0,0,0,1,0,8,Update about.html files.
+191,1,0,0,0,0,1,0,0,0,1,0,0,0,8,Remove org.eclipse.babel.tapiji.translator.rbe plug-in.
+192,0,1,0,0,0,1,0,0,0,0,0,1,0,11,Removed CDO dependency
+193,0,1,0,0,0,1,0,0,0,0,0,1,0,11,Fixed bundle names and license information
+194,0,1,0,0,0,1,0,0,0,0,0,1,0,11,Added update site
+195,0,1,0,0,0,1,0,0,0,0,0,1,0,11,Removed CDO from the UI project
+196,1,0,0,0,0,1,0,0,0,1,0,0,0,11,"317535: Dynamically add parts to any part (319357)  added a prototype for marking tasks as reviews (see bug 317867) added PartAdvisor implementation which removes uninteresting parts from the task editor and adds the review part added a ReviewDataManager, which keeps the review data in-memory"
+197,0,1,0,0,0,1,0,0,0,0,0,1,0,11,"321269, 317535  Fixed syntax highlighting in diff view Dynamically add parts to any part (319357) added local caching for review data enhanced part advisor extension removed unused classes"
+198,0,1,0,0,0,1,0,0,0,0,0,1,0,11,317535: Fixed a bug preventing submit
+199,0,0,1,1,0,0,0,0,0,0,1,0,0,11,322734: UI Rework - review results drop down - review summary drop down
+200,0,1,0,0,0,1,0,0,0,0,0,1,0,11,322734: Force synchronization after submit
+201,0,0,1,0,0,0,0,1,0,0,0,0,1,11,322734: review type identification fallback
+202,1,0,0,0,0,1,0,0,0,1,0,0,0,11,322734: Display just the last review result for a task
+203,1,0,0,0,0,1,0,0,0,1,0,0,0,11,322734: Re-Added comment comment part
+204,1,0,0,0,0,1,0,0,0,1,0,0,0,11,322734: Force synchronisation after submit After submit the task editor still shows no attachment an thus no review section. After synchronize the task the attachment and the review display correctly. As a workaround force the synchronization of the task and re-open the editor.
+205,0,1,0,0,0,1,0,0,0,0,0,1,0,11,322734: display review task without result in summary table
+206,0,1,0,0,1,1,0,0,0,0,0,1,0,11,322734: Load review data from remote task
+207,1,0,0,0,0,1,0,0,0,1,0,0,0,11,"322734: Avoid exception, when loading non-existant local cache of review data"
+208,0,1,0,0,1,0,0,0,0,0,0,1,0,11,322734: Submit of changed reviews
+209,1,0,0,0,0,1,0,0,0,1,0,0,0,11,322734: Label for review rating and comment
+210,1,0,0,0,0,1,0,0,0,1,0,0,0,11,322734: Open Review Compare in another editor
+211,1,0,0,0,0,1,0,0,0,1,0,0,0,11,322734: Renamed part/section to review
+212,0,1,0,0,0,0,1,0,0,0,0,1,0,11,"322734: changed labels, border for rating comment"
+213,0,1,0,0,0,0,1,0,0,0,1,0,0,11,322734: File table spans whole width
+214,0,1,0,0,0,1,0,0,0,0,0,1,0,11,322734: Result types in section text
+215,0,1,0,0,0,0,1,0,0,0,0,1,0,11,"Moved ""tbr"" to subfolder"
+216,1,0,0,0,0,1,0,0,0,1,0,0,0,11,"Moved ""tbr"" to subfolder and added folders for other projects"
+217,0,0,0,0,0,0,0,0,0,0,0,0,0,11,"331862: Move review parts back to seperate page  -Deleted old advisors -Changed mylyn.tasks.ui dependency to 3.4 -Added old PageFactories and Pages -Removed old unnecessary dependency -Initial import of review dsl -Cleanup reviews.core -Removed old reviews model -Removed old code -Development, Cleanup  -Introduced API over most accesses to Mylyn (still not complete yet)  -Tweaked the dsl  -Removed unused, old classes  -Fixed namespace -Finished namespace renaming -Review for non-patch attachments -Moved Review Summary to common review page  -Removed special summary page for tasks with review sub-tasks  -Show common review page on all tasks  -Some cleanup and refactoring  -Expand summary tree by default  -Filtering for summary view  -Uninteresting nodes can be filtered -Abstraction for TasksUiUtil.openTask for Summary -Further Cleanup -Added legal headers -Removed unused classes -fixed plugin xml -Summary: show creator of review -Enable filtering by default -Summary: Description for Task nodes  -The changing artifacts of the task (currently only attachments - patches and other) will be displayed in the table. -Rebased & squashed so that all files have that legal header"
+218,0,1,0,0,0,0,0,1,0,0,0,1,0,11,Allow multiple attachments for review
+219,0,1,0,0,0,1,0,0,0,0,0,1,0,11,Hierarchical review scope  - scope table is now a tree. - review section will be automatically collapsed if no scope is found. - refined descriptions and types for scope items
+220,1,0,0,0,0,1,0,0,0,1,0,0,0,11,Cleanup  -Renamed interface ReviewScopeItem -Moved xtext setup to core  -removed now unecessary dependencies in ui
+221,1,0,0,0,0,1,0,0,0,1,0,0,0,11,Merge branch '331862_move_review_parts'
+222,0,1,0,0,0,0,1,0,0,0,0,1,0,11,cleanup warnings  * Fix build path issue * Minor Cleanup for Action  Change-Id: I4e4bda10624e16d4f69545a953ae80d84939c1dd
+223,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-266 remove obsolete comments
+224,0,1,0,0,1,0,0,0,0,0,0,1,0,14,DELTASPIKE-278 add category to Message API
+225,1,0,0,0,0,1,0,0,0,1,0,0,0,14,DELTASPIKE-278 remove unecessary checks for Message return values  Why should we restrict the return value?
+226,0,1,0,0,0,0,0,1,0,0,0,1,0,14,DELTASPIKE-278 implement the category resolving and add tests
+227,1,0,0,0,0,1,0,0,0,1,0,0,0,14,DELTASPIKE-277 add JsfMessage API
+228,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-280 register resources under their full path
+229,1,0,0,0,0,1,0,0,0,1,0,0,0,14,DELTASPIKE-274 fix remote container tests
+230,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-277 add first API draft
+231,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-277 first version of a JsfMessage implementation
+232,0,0,1,0,0,0,0,1,0,0,1,0,0,14,DELTASPIKE-266 refactor JSF test setup
+233,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-277 improve graphene setup
+234,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-277 fix JsfMessageProducer
+235,0,1,0,1,0,0,0,0,0,0,1,1,0,14,DELTASPIKE-277 add missing beans.xml
+236,0,0,1,1,0,0,0,0,0,0,1,0,0,14,DELTASPIKE-277 fix JsfMessageProducer type detection
+237,0,0,1,1,0,0,0,0,0,0,1,0,0,14,DELTAPIKE-277 first warp test for JsfMessage
+238,1,0,0,0,0,0,0,1,0,1,0,0,0,14,add tomee build leftovers to .gitignore
+239,0,0,1,1,0,0,0,0,0,0,1,0,0,14,DELTASPIKE-277 create a proper unit test and remove unused imports
+240,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-277 fix missing license header
+241,0,0,1,0,0,0,0,0,0,0,0,0,1,14,upgrade Arquillian Drone to 1.1.0.CR3
+242,0,1,0,1,0,1,0,0,0,0,0,1,0,14,enable checkstyle reporting on the commandline  catched by Arne
+243,1,0,0,0,0,1,0,0,0,1,0,0,0,14,"DELTASPIKE-281 add LocaleResolver for JSF projects  if a ViewRoot is available, we take the Locale from there."
+244,1,0,0,0,0,1,0,0,0,1,0,0,0,14,DELTASPIKE-281 add unit test and fix some bugs in the locale mechanism
+245,0,1,0,0,0,1,0,0,0,0,0,1,0,14,CDI-279 add a unit test for our JSF-2-CDI scope mapping
+246,0,1,0,0,0,1,0,0,0,0,0,1,0,14,upgrade to more recent weld-arquillian version
+247,0,1,0,0,0,0,0,0,0,0,0,1,0,14,move properties section to the top of the pom
+248,0,1,0,0,0,0,0,0,0,0,0,1,0,14,upgrade tomee and openejb to released versions
+249,0,1,0,0,0,1,0,0,0,0,0,1,0,14,get rid of empty if statement
+250,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-80 fix concurrency/visibility issue
+251,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-286 Comparators should be Serializable
+252,0,1,0,0,0,1,0,0,0,0,0,1,0,14,DELTASPIKE-241 new weld-arquillian container fixes BDA issues
+253,0,0,1,1,0,0,0,0,0,0,1,0,0,15,gnome-keyring-1: Fix GNOME_KEYRING_ constant bindings  Fixes bug 556632.
+254,0,1,0,0,0,1,0,0,0,0,0,1,0,15,"glib-2.0: Add more GMarkup bindings  Add g_markup_collect_attributes, g_markup_parser_context_push, g_markup_parser_context_pop, and GMarkupCollectType bindings, based on patch by Yu Feng, fixes bug 564704."
+255,0,1,0,0,0,1,0,0,0,0,0,1,0,15,"glib-2.0: Fix GIOFlags binding  Prepend IS_ to IOFlags.READABLE, WRITEABLE, and SEEKABLE, fixes bug 567387."
+256,0,1,0,0,0,1,0,0,0,0,0,1,0,15,"gdk-2.0: Fix gdk_property_change binding  The data parameter to gdk_property_change should not include array length, fixes bug 583235."
+257,1,0,0,0,1,1,0,0,0,1,0,0,0,15,librsvg-2.0: rsvg_handle_new_from_data takes an array  Fixes bug 583475.
+258,0,1,0,0,0,0,0,0,0,0,0,1,0,15,gdk-2.0: Fix GdkNativeWindow binding  Fixes bug 587157.
+259,0,1,0,0,0,1,0,0,0,0,0,1,0,15,"pangocairo: Fix pango_cairo_create_* bindings  pango_cairo_create_{context,layout} transfer ownership, fixes bug 587840."
+260,0,1,0,0,0,0,0,0,1,0,0,1,0,15,Use (s)size_t instead of (u)long in several string methods  Fixes bug 577352.
+261,1,1,0,0,0,1,0,0,0,1,0,1,0,15,vapigen: Support overriding memory management functions in metadata  Fixes bug 589307.
+262,1,0,0,0,0,1,0,0,0,1,0,0,0,15,pango: Various PangoAttribute-related fixes  Fixes bug 587645.
+263,1,0,0,0,0,1,0,0,0,1,0,0,0,15,vapigen: Make quotes around metadata arguments optional  Fixes bug 588171.
+264,0,1,0,0,0,1,0,0,0,0,1,0,0,15,Make many copy methods transfer ownership  Fixes bug 589309.
+265,1,0,0,0,0,1,0,0,0,0,0,0,1,15,libusb: Numerous improvements to the API  Fixes bug 589910.
+266,1,0,0,0,0,1,0,0,0,1,0,0,0,15,"libftdi: Update to libftdi-0.16, adapt to libusb changes  Fixes bug 589911."
+267,1,0,0,0,0,1,0,0,0,1,0,0,0,15,Add libusb-1.0 bindings  Fixes bug 589913.
+268,0,1,0,0,0,0,0,0,0,0,0,1,0,15,glib-2.0: time_t does not have a type_id  Fixes bug 587150.
+269,0,1,0,0,0,1,0,0,0,0,0,1,0,15,glib-2.0: add GLib.HashTable.foreach  Fixes bug 577365.
+270,1,0,0,0,0,1,0,0,0,1,0,0,0,15,zlib: Many enhancements for memory/stream based operations  Fixes bug 577804.
+271,0,1,0,0,0,1,0,0,0,0,0,1,0,15,libpanelapplet-2.0: Add PanelAppletOrient and some missing methods  Fixes bug 590544.
+272,0,1,0,0,0,1,0,0,0,0,1,0,0,15,gtk+-2.0: Fix gtk_tree_view_get_columns binding  TreeView.get_columns returns a GList of unowned GtkTreeViewColumn.  Fixes bug 591191.
+273,0,1,0,0,0,0,0,0,0,0,0,1,0,16,libgnome-2.0: Fix gnome_execute_* bindings.  Fixes bug 599346.
+274,0,1,0,0,0,1,0,0,0,0,0,1,0,16,"libosso: Use tabs instead of spaces, do not spread methods across multiple lines."
+275,1,0,0,0,0,1,0,0,0,1,0,0,0,16,gdk-2.0: Fix Gdk.Device.get_axis binding.  Fixes bug 598834.
+276,1,0,0,0,0,1,0,0,0,1,0,0,0,16,"libgdata: Fix query_all_albums, several type check functions, regenerate.  Fixes bug 597191."
+277,1,0,0,1,0,0,0,0,0,0,1,0,0,16,glib-2.0: replace many (u)long variables with (s)size_t and time_t  Fixes bug 592188.
+278,1,0,0,0,0,1,0,0,0,1,0,0,0,16,"Don't use ""using"" in *.vapi.  Fixes bug 593195."
+279,1,0,0,0,0,1,0,0,0,1,0,0,0,16,Add ccss-1 and remove gl-1.0 from vapi/Makefile.am
+280,0,1,0,0,0,1,0,0,0,0,0,1,0,16,"libgsf-1: Update to 1.14.16, regenerate.  Partially fixes bug 600295."
+281,0,1,0,0,0,1,0,0,0,0,0,1,0,16,gtk+-2.0: make several Gtk.Entry.set_icon_* parameters nullable.  Fixes bug 600597.
+282,1,0,0,0,0,1,0,0,0,1,0,0,0,16,"gtk+-2.0: Mark Gtk.Widget.can_focus as not having an accessor method, to preserve compatibility with GTK+ < 2.18.  Fixes bug 601221."
+283,0,1,0,0,0,1,0,0,0,0,0,1,0,16,gtk+-2.0: Mark adjustment argument to GtkV/HScrollbar as nullable.  Fixes bug 597622.
+284,0,1,0,0,0,0,0,0,0,0,0,1,0,16,gdk-pixbuf-2.0: Allow Gdk.PixbufLoader.write to specify array length.  Fixes bug 597870.
+285,0,1,0,0,0,1,0,0,0,0,0,1,0,16,"posix: Fix FILE bindings (copy from GLib.FileStream), and add popen.  Fixes bug 595880."
+286,0,0,1,0,0,0,0,0,0,0,0,0,1,16,glib-2.0: Fix GLib.ValueArray.values binding.
+287,0,1,0,0,0,1,0,0,0,0,0,1,0,16,gtk+-2.0: nullability fixes for GtkToolButton and descendants.  Fixes bug 602273.
+288,1,1,0,0,0,1,0,0,0,0,0,1,0,16,gtk+-2.0: Gtk.SelectionData.get_data does not return an array length.  Fixes bug 602776.
+289,0,1,0,0,0,1,0,0,0,0,0,1,0,16,unique-1.0: update to unique-1.1.6.  Fixes bug 603609.
+290,0,1,0,0,0,1,0,0,0,0,1,0,0,16,clutter-1.0: Clutter.get_option_group* functions transfer ownership.  Fixes bug 602688.
+291,0,1,0,0,0,1,0,0,0,0,0,1,0,16,Fix some typos in CCode attributes.
+292,0,1,0,0,0,1,0,0,0,0,0,1,0,16,gio-2.0: Fix many async functions which don't end in _async.  Fixes bug 598657.
+293,0,1,0,0,0,0,0,0,0,0,0,1,0,16,gtk+-2.0: Fix Gtk.Notebook.switch_page signal binding.  Fixes bug 604746.
+294,0,1,0,0,0,1,0,0,0,0,0,1,0,16,gtk+-2.0: Gtk.get_current_event_state's argument should be out.  Fixes bug 603751.
+295,1,0,0,0,0,1,0,0,0,1,0,0,0,16,gstreamer-controller-0.10: Fix Gst.LFOWaveform enum.  Fixes bug 603725.
+296,0,1,0,0,0,1,0,0,0,0,0,1,0,16,gstreamer-0.10: Gst.Value.get/set_date expect a GLib.Date.  Fixes bug 601766.
+297,0,1,0,0,0,1,0,0,0,0,0,1,0,16,"gio-2.0: Several ownership fixes, mostly in GResolver.  Fixes bug 604969."
+298,0,1,0,0,0,1,0,0,0,0,0,1,0,16,libsoup-2.4: Fix soup_message_headers_get_content_type binding.  Fixes bug 604907.
+299,0,0,1,0,0,0,0,0,0,0,0,0,1,16,cogl-1.0: Cogl.Texture.from_data data does not provide array length.  Fixes bug 604108.
+300,0,0,1,1,0,0,0,0,0,0,1,0,0,16,gstreamer-0.10: Add type_id for Gst.Structure.
+301,0,1,0,0,0,1,0,0,0,0,0,1,0,16,"gconf-2.0: several ownership and nullability fixes.  Based on patch by Michal Hruby, fixes bug 605449."
+302,0,1,0,0,0,1,0,0,0,0,0,1,0,16,gio-2.0: argument to BufferedInputStream.peek_buffer should be out  Fixes bug 606627.
+303,0,1,0,0,0,1,0,0,0,0,0,1,0,16,mysql: Fix mysql_init binding.  Fixes bug 603085.
+304,1,0,0,0,0,1,0,0,0,1,0,0,0,16,dbus-glib-1: Add bindings for DBusGProxy::destroy signal.
+305,1,0,0,0,1,1,0,0,0,1,0,0,0,16,"libsoup-2.4: SoupMessageBody.data should be uing8[], not string.  Fixes bug 605862."
+306,0,1,0,0,0,0,0,0,0,0,0,1,0,16,gtk+-2.0: Gtk.MessageDialog:buttons does not have an accessor method  Fixes bug 607992.
+307,1,0,0,0,1,1,0,0,0,1,0,0,0,17,json-glib-1.0: always include json-glib.h  Fixes bug 605924.
+308,1,0,0,0,1,1,0,0,0,1,0,0,0,17,gdk-2.0: Fix types of several Gdk.Event*.state fields  Fixes bug 607337.
+309,1,0,0,0,1,1,0,0,0,1,0,0,0,17,gtk+-2.0: Fix gtk_combo_box_set_row_separator_func binding  Fixes bug 606919.
+310,1,0,0,0,1,1,0,0,0,1,0,0,0,17,"glib-2.0: revert previous patch against MarkupParser callbacks.  The new version sacrificed usability for theoretical correctness, and was not well received."
+311,1,0,0,0,0,1,0,0,0,1,0,0,0,17,tracker-indexer-module-1.0: regenerate
+312,1,0,0,0,0,1,0,0,0,1,0,0,0,17,cairo: Use closure param to ReadFunc and WriteFunc for delegate target
+313,1,1,0,0,1,1,0,0,0,1,0,1,0,17,Change many static delegates to has_target = false
+314,1,0,0,0,1,1,0,0,0,1,0,0,0,17,libsoup-2.4: nullability fixes for Soup.MessageHeaders methods  Fixes bug 604907.
+315,1,0,0,0,1,1,0,0,0,1,0,0,0,17,Update delegate has_target syntax in *-custom.vala
+316,1,0,0,0,0,1,0,0,0,1,0,0,0,17,gdk-2.0: update to 2.18.6  Fixes bug 609293.
+317,0,0,1,0,0,0,0,0,0,0,0,0,1,17,libxml-2.0: Fix instance position in several methods  Fixes bug 609814.
+318,0,1,0,1,0,0,1,0,0,0,0,1,0,17,glib-2.0: Make GLib.String.erase erase the entire string by default
+319,1,0,0,1,0,0,0,0,0,0,1,0,0,17,gio-unix-2.0: update to 2.22.4  Fixes bug 610074.
+320,0,0,1,0,0,0,0,0,0,0,0,0,1,17,glib-2.0: locale arguments to KeyFile methods should be nullable  Fixes bug 609145.
+321,0,1,0,0,1,0,0,0,0,0,0,1,0,17,vapigen: fix changing the type_name of an array field via metadata
+322,0,0,0,0,0,0,0,0,0,0,0,0,1,17,gstreamer-0.10: Clean up Gst.Buffer.data binding  Fixes bug 610330.
+323,0,0,1,0,0,0,0,0,0,0,0,0,1,17,gio-2.0: nullability fixes for g_file_replace_contents  Fixes bug 611282.
+324,0,0,1,1,0,0,0,0,0,0,0,0,1,17,goocanvas: Correct cname of Goo.CanvasImage.create  Fixes bug 612221.
+325,0,1,0,0,1,1,0,0,0,0,0,1,0,17,libsoup-2.4: Make Soup.Session.queue_message callback nullable  Fixes bug 612050.
+326,0,1,0,0,0,1,1,0,0,0,0,1,0,17,sdl: Remove unnecessary argument to SDL.Key.get_keys
+327,1,0,0,0,0,1,0,0,0,1,0,0,0,17,gstreamer-netbuffer-0.10: Hide Gst.NetBufferClass
+328,0,0,1,0,0,0,0,0,0,0,0,0,1,17,gstreamer-video-0.10: don't hide Gst.VideoFormat members
+329,0,1,0,0,1,0,1,0,0,0,0,1,0,17,vapigen: Improve support for type_arguments  Fixes bug 609693.
+330,0,0,1,0,0,0,0,0,0,0,0,0,1,17,gtk+-2.0: Add many missing type arguments  Partially fixes bug 609875.
+331,0,0,1,0,0,0,0,0,0,0,0,0,1,17,gdk-2.0: Mark Gdk.Region.get_rectangles rectangles param as out  Fixes bug 612632.
+332,0,0,1,0,0,0,0,0,0,0,0,0,1,17,gtk+-2.0: Fix several GtkIMContext-related bindings  Fixes bug 611533.
+333,0,0,0,0,0,0,0,0,0,0,0,0,1,17,gtk+-2.0: Make GtkContainer::set_focus_child's argument nullable  Fixes bug 611492.
+334,0,1,0,0,1,1,0,0,0,0,0,1,0,17,gtk+-2.0: Hide many unwanted user data and destroy notify arguments  Fixes bug 611021.
+335,0,1,0,0,0,0,1,0,0,0,0,1,0,17,"librsvg-2.0: Update to 2.26.0, remove librsvg-2.0-custom.vala"
+336,1,0,0,0,0,1,0,0,0,1,0,0,0,17,libgnomeui-2.0: Update to 2.24.2.
+337,1,0,0,1,0,0,0,0,0,1,0,0,0,17,json-glib-1.0: Use metadata instead of json-glib-1.0-custom.vala
+338,1,0,0,0,1,0,0,0,0,1,0,0,0,17,glib-2.0: Use strtol instead of atol for string.to_long
+339,0,0,1,0,0,0,0,0,0,0,0,0,1,17,Regenerate all bindings
+340,0,1,0,0,1,0,0,0,0,0,0,1,0,17,Make all Literal constructors accept null SourceReferences
